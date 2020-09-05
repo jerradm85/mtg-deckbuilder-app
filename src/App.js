@@ -9,11 +9,22 @@ import Decks from './Components/Decks/Decks'
 import Login from './Components/Login/Login'
 import CreateDeck from './Components/CreateDeck/CreateDeck'
 import Card from './Components/Card/Card'
+import User from './Components/User/User'
+import Deck from './Components/Deck/Deck'
 
 
 
 class App extends React.Component {
   state = {
+    users: [
+      {
+        id: 1,
+        username: 'Jerrad',
+        password: 'password',
+        email: 'fake@fake.com',
+      }
+    ],
+
     decks: [
       {
         id: 1,
@@ -27,35 +38,44 @@ class App extends React.Component {
         id: 3,
         title: 'Deck 3'
       },
-      {
-        id: 4,
-        title: 'Deck 4'
-      },
-
     ],
+
     cards: [
       {
         id: 1,
         name: 'First Card',
         text: 'lorem ipsum',
+        image: 'https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673-960x960.png'
       },
       {
         id: 2,
         name: 'Second Card',
         text: 'lorem ipsum',
+        image: 'https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673-960x960.png'
       },
       {
         id: 3,
         name: 'Third Card',
         text: 'lorem ipsum',
+        image: 'https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673-960x960.png'
       }
     ]
   }
+
+  setUser(user) {
+    this.setState({
+      users: this.state.users.concat(user)
+    })
+  } 
+
   render() {
+
     const value = {
+      users: this.state.users,
       decks: this.state.decks,
       cards: this.state.cards,
     }
+
     return (
       <Context.Provider value={value}>
         <div>
@@ -63,11 +83,13 @@ class App extends React.Component {
             <Link className='Logo' to='/'><h1>MTG Deckbuilder</h1></Link>
             <Route className='' path="/" component={Nav} />
           </nav>
-            <Route path='/register' component={Registration} />
-            <Route path='/decks' component={Decks} />
-            <Route path='/login' component={Login} />
-            <Route path='/create' component={CreateDeck} />
-            <Route path='/card/:cardId' component={Card} />
+          <Route path='/register' component={Registration} />
+          <Route path='/decks' component={Decks} />
+          <Route path='/login' component={Login} />
+          <Route path='/create' component={CreateDeck} />
+          <Route path='/card/:cardId' component={Card} />
+          <Route path='/user' component={User} />
+          <Route path='/deck/:deckId' component={Deck} />
         </div>
       </Context.Provider>
     )
