@@ -12,15 +12,13 @@ class Deck extends React.Component {
         const cards = this.context.cards
         return (
             <div>
-                {deck.title}
+                <h3>{deck.title}</h3>
                 {cards.map(card => {
                     return <li>
-                        <Link to={'/card/'}>{card.name}</Link>
-                        {card.text}
-                        <img src={card.image} />
+                        <Link to={`/card/${card.id}`}>{card.name}</Link>
                     </li>
                 })}
-
+                <Link to={`/user`}><button>Back</button></Link>
             </div>
         )
     }

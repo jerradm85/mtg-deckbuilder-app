@@ -9,36 +9,37 @@ class Registration extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        const users = this.context.users
-        console.log(users)
+        // const users = this.context.users
+        // console.log(users)
 
         const username = e.target.username.value;
         const password = e.target.password.value;
         const email = e.target.email.value;
         const remail = e.target.remail.value;
 
-        if(email !== remail) {
-            console.log('both email fields must match.')
-            return
-        }
+        // if(email !== remail) {
+        //     console.log('both email fields must match.')
+        //     return
+        // }
 
-        const newUser = { username, password, email }
+        // const newUser = { username, password, email }
 
-        fetch(`${'API path goes here'}/users`, {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(newUser)
-        })
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error('Something went wrong.')
-                } return res.json();
-            })
-            .then(user => {
+        // fetch(`${'API path goes here'}/users`, {
+        //     method: "POST",
+        //     headers: {
+        //         "content-type": "application/json"
+        //     },
+        //     body: JSON.stringify(newUser)
+        // })
+        //     .then(res => {
+        //         if (!res.ok) {
+        //             throw new Error('Something went wrong.')
+        //         } return res.json();
+        //     })
+        //     .then(user => {
 
-            })
+        //     })
+        this.props.history.push('/login')
     }
 
     render() {

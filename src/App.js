@@ -5,7 +5,6 @@ import { Route, Switch, Link } from 'react-router-dom'
 import Context from './Context'
 
 import Registration from './Components/Registration/Registration'
-import Decks from './Components/Decks/Decks'
 import Login from './Components/Login/Login'
 import CreateDeck from './Components/CreateDeck/CreateDeck'
 import Card from './Components/Card/Card'
@@ -62,12 +61,6 @@ class App extends React.Component {
     ]
   }
 
-  setUser(user) {
-    this.setState({
-      users: this.state.users.concat(user)
-    })
-  } 
-
   render() {
 
     const value = {
@@ -84,7 +77,6 @@ class App extends React.Component {
             <Route className='' path="/" component={Nav} />
           </nav>
           <Route path='/register' component={Registration} />
-          <Route path='/decks' component={Decks} />
           <Route path='/login' component={Login} />
           <Route path='/create' component={CreateDeck} />
           <Route path='/card/:cardId' component={Card} />
