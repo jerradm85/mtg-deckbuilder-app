@@ -22,9 +22,9 @@ class Card extends React.Component {
         return (
             <div>
                 <h2>{foundCard.name}</h2>
-                <img src={foundCard.image} />
+                <img src={foundCard.image} alt='foundCard' />
                 <p>{foundCard.text}</p>
-                <Link to={`/deck/${deck.id}`}><button>Back</button></Link>
+                <Link to={`/deck/${deck.id}`}>Back</Link>
             </div>
         )
     }

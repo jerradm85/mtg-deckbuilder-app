@@ -8,17 +8,21 @@ class Deck extends React.Component {
     static contextType = Context;
 
     render() {
-        const deck = this.context.decks[0];
+        const deck = this.context.decks
+            .find(deck => deck.id == this.props.match.params.deckId) || {};
         const cards = this.context.cards
         return (
             <div>
                 <h3>{deck.title}</h3>
+                <div className="AboutDeck">
+                    "About Deck" goes here.
+                </div>
                 {cards.map(card => {
-                    return <li>
+                    return <div key={card.id}>
                         <Link to={`/card/${card.id}`}>{card.name}</Link>
-                    </li>
+                    </div>
                 })}
-                <Link to={`/user`}><button>Back</button></Link>
+                <Link className='BackButton' to={`/user`}>Back</Link>
             </div>
         )
     }

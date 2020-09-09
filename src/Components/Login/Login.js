@@ -11,6 +11,8 @@ class Login extends React.Component {
         const username = e.target.username.value
         const password = e.target.password.value
 
+        this.context.setUser(username)
+
         this.props.history.push('/user')
 
         // fetch(`${'API path goes here'}/users`, {

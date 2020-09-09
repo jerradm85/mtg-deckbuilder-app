@@ -1,12 +1,13 @@
 import React from 'react'
 import './App.css'
-import Nav from './Components/Nav/Nav'
 import { Route, Switch, Link } from 'react-router-dom'
 import Context from './Context'
 
+import Nav from './Components/Nav/Nav'
 import Registration from './Components/Registration/Registration'
 import Login from './Components/Login/Login'
 import CreateDeck from './Components/CreateDeck/CreateDeck'
+import UpdateDeck from './Components/UpdateDeck/UpdateDeck'
 import Card from './Components/Card/Card'
 import User from './Components/User/User'
 import Deck from './Components/Deck/Deck'
@@ -15,14 +16,7 @@ import Deck from './Components/Deck/Deck'
 
 class App extends React.Component {
   state = {
-    users: [
-      {
-        id: 1,
-        username: 'Jerrad',
-        password: 'password',
-        email: 'fake@fake.com',
-      }
-    ],
+    user: null,
 
     decks: [
       {
@@ -61,26 +55,34 @@ class App extends React.Component {
     ]
   }
 
+  setUser = (user) => {
+    this.setState({
+      user
+    })
+  }
+
   render() {
 
     const value = {
-      users: this.state.users,
+      user: this.state.user,
       decks: this.state.decks,
       cards: this.state.cards,
+      setUser: this.setUser,
     }
 
     return (
       <Context.Provider value={value}>
         <div>
-          <nav>
-            <Link className='Logo' to='/'><h1>MTG Deckbuilder</h1></Link>
-            <Route className='' path="/" component={Nav} />
-          </nav>
+          <header>
+          <Link className='Logo' to='/'><h1>MTG Deckbuilder</h1></Link>
+          <Route className='' path="/" component={Nav} />
+          </header>  
           <Route path='/register' component={Registration} />
           <Route path='/login' component={Login} />
-          <Route path='/create' component={CreateDeck} />
-          <Route path='/card/:cardId' component={Card} />
           <Route path='/user' component={User} />
+          <Route path='/create' component={CreateDeck} />
+          <Route path='/update' component={UpdateDeck} />
+          <Route path='/card/:cardId' component={Card} />
           <Route path='/deck/:deckId' component={Deck} />
         </div>
       </Context.Provider>

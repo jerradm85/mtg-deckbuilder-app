@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
+.UpdateDeck {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 400px;
+}
