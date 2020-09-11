@@ -11,6 +11,7 @@ import UpdateDeck from './Components/UpdateDeck/UpdateDeck'
 import Card from './Components/Card/Card'
 import User from './Components/User/User'
 import Deck from './Components/Deck/Deck'
+import Example from './Components/Main/Main'
 
 
 
@@ -75,10 +76,15 @@ class App extends React.Component {
         <div>
           <header>
           <Link className='Logo' to='/'><h1>MTG Deckbuilder</h1></Link>
-          <Route className='' path="/" component={Nav} />
-          </header>  
+          <nav>
+          <Route className='' exact path="/" component={Nav} />
           <Route path='/register' component={Registration} />
           <Route path='/login' component={Login} />
+          </nav>
+          </header>
+          <main>
+            <Route exact path="/" component={Example} />
+          </main>
           <Route path='/user' component={User} />
           <Route path='/create' component={CreateDeck} />
           <Route path='/update' component={UpdateDeck} />

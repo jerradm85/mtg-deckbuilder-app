@@ -2,9 +2,49 @@
     box-sizing: border-box;
 }
 
-.registerForm {
+.reg_page {
+    
+}
+
+.reg_form_input {
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.formField {
+    border: 2px black solid;
     display: flex;
+    border-radius: 5px;
     flex-direction: column;
     margin: auto;
     max-width: 400px;
+}
+
+.regContainer {
+    align-items: center;
+    border: 1px gray solid;
+    display: flex;
+    height: 450px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    top: 200px;
+    width: 350px;
+    
+}
+
+.regForm {
+    text-align: center;
+}
+
+.reg_submit {
+    height: 30px;
+    margin: 0 auto;
+    width: 100px;
+    font-size: 20px;
 }

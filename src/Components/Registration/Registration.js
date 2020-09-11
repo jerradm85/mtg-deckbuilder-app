@@ -44,20 +44,24 @@ class Registration extends React.Component {
 
     render() {
         return (
-            <form action="submit" onSubmit={this.handleSubmit}>
-                <fieldset className="registerForm">
+            <div className="reg_page">
+                <div className="regContainer">
+                <form className="regForm" action="submit" onSubmit={this.handleSubmit}>
+                <fieldset className="formField">
                     <legend>New User Registration</legend>
                     <label htmlFor="username">Username:</label>
-                    <input type="text" name="username" />
+                    <input className="reg_form_input" type="text" name="username" />
                     <label htmlFor="password">Password:</label>
-                    <input type="text" name="password" />
+                    <input className="reg_form_input" type="text" name="password" />
                     <label htmlFor="email">E-mail:</label>
-                    <input type="text" name="email" />
+                    <input className="reg_form_input" type="text" name="email" />
                     <label htmlFor="email">Repeat E-mail:</label>
-                    <input type="text" name="remail" />
-                    <button type="submit">Submit</button>
+                    <input className="reg_form_input" type="text" name="remail" />
+                    <button className="reg_submit" type="submit">Register</button>
                 </fieldset>
             </form>
+            </div>
+            </div>
         )
     }
 }
