@@ -4,15 +4,6 @@
     min-height: calc(100vh - 80px);
 }
 
-.left {
-    background-color: darkslategray;
-    color: azure;
-  }
-  
-.right {
-    background-color: wheat;
-    color: firebrick;
+h1 {
+    margin-left: 10px;
 }
-
-
-

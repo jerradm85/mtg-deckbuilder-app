@@ -1,4 +1,50 @@
-.Deck {
+.user_decks_container {
+    border: 1px gray solid;
+    padding-top: 10px;
+    padding-bottom:  10px;
     display: flex;
     flex-direction: column;
+    width: 275px;
+}
+
+.deck {
+    border: 1px gray solid;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.deck_name {
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+.deck_delete {
+    width: 75px;
+    height: 25px;
+    position: relative;
+    left: 168px;
+    bottom: 5px;
+}
+
+.create_deck {
+    font-size: 24px;
+    margin-left: 10px;
+    border: 1px gray solid;
+    text-align: center;
+    padding-bottom: 5px;
+    width: 100px;
+}
+
+.edit_deck {
+    border: 1px gray solid;
+    width: 75px;
+    text-align: center;
+    position: relative;
+    left: 168px;
+    bottom: 10px;
 }

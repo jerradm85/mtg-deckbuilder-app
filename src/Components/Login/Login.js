@@ -23,15 +23,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <form action="login" onSubmit={this.handleLogin}>
-                    <fieldset className="loginForm">
+            <div className="login_container">
+                <form className="login_form" action="login" onSubmit={this.handleLogin}>
+                    <fieldset className="login_field">
                         <legend>User Login</legend>
                         <label htmlFor="username">Username:</label>
-                        <input type="text" name="username" />
+                        <input className="login_form_input" type="text" name="username" />
                         <label htmlFor="password">Password:</label>
-                        <input type="text" name="password" />
-                        <button type="submit">Login</button>
+                        <input className="login_form_input" type="text" name="password" />
+                        <button className="login_button" type="submit">Login</button>
                     </fieldset>
                 </form>
             </div>

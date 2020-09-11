@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-.reg_page {
-    
-}
-
 .reg_form_input {
     border: 1px black solid;
     border-radius: 10px;
@@ -15,7 +11,7 @@
     margin-bottom: 10px;
 }
 
-.formField {
+.form_field {
     border: 2px black solid;
     display: flex;
     border-radius: 5px;
@@ -24,7 +20,7 @@
     max-width: 400px;
 }
 
-.regContainer {
+.reg_container {
     align-items: center;
     border: 1px gray solid;
     display: flex;
@@ -38,7 +34,7 @@
     
 }
 
-.regForm {
+.reg_form {
     text-align: center;
 }
 

@@ -74,13 +74,11 @@ class App extends React.Component {
     return (
       <Context.Provider value={value}>
         <div>
-          <header>
-          <Link className='Logo' to='/'><h1>MTG Deckbuilder</h1></Link>
-          <nav>
+          <header className="">
+          <Link className="logo" to='/'><h1>MTG Deckbuilder</h1></Link>
           <Route className='' exact path="/" component={Nav} />
           <Route path='/register' component={Registration} />
           <Route path='/login' component={Login} />
-          </nav>
           </header>
           <main>
             <Route exact path="/" component={Example} />

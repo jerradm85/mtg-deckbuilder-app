@@ -44,24 +44,23 @@ class Registration extends React.Component {
 
     render() {
         return (
-            <div className="reg_page">
-                <div className="regContainer">
-                <form className="regForm" action="submit" onSubmit={this.handleSubmit}>
-                <fieldset className="formField">
-                    <legend>New User Registration</legend>
-                    <label htmlFor="username">Username:</label>
-                    <input className="reg_form_input" type="text" name="username" />
-                    <label htmlFor="password">Password:</label>
-                    <input className="reg_form_input" type="text" name="password" />
-                    <label htmlFor="email">E-mail:</label>
-                    <input className="reg_form_input" type="text" name="email" />
-                    <label htmlFor="email">Repeat E-mail:</label>
-                    <input className="reg_form_input" type="text" name="remail" />
-                    <button className="reg_submit" type="submit">Register</button>
-                </fieldset>
-            </form>
+            <div className="reg_container">
+                <form className="reg_form" action="submit" onSubmit={this.handleSubmit}>
+                    <fieldset className="form_field">
+                        <legend>New User Registration</legend>
+                        <label htmlFor="username">Username:</label>
+                        <input className="reg_form_input" type="text" name="username" />
+                        <label htmlFor="password">Password:</label>
+                        <input className="reg_form_input" type="text" name="password" />
+                        <label htmlFor="email">E-mail:</label>
+                        <input className="reg_form_input" type="text" name="email" />
+                        <label htmlFor="email">Repeat E-mail:</label>
+                        <input className="reg_form_input" type="text" name="remail" />
+                        <button className="reg_submit" type="submit">Register</button>
+                    </fieldset>
+                </form>
             </div>
-            </div>
+
         )
     }
 }

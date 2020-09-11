@@ -9,12 +9,13 @@ class Nav extends React.Component {
 
     render() {
         return (
-            <div className="Nav">
+            <div className="nav">
                 {
                     this.context.user ? (<>
                         <Link to='/'>Logout</Link>
                     </>) : (<>
                         <Link to='/login'>Login</Link>
+                        {' '}
                         <Link to='/register'>Register</Link>
                     </>)
                 }
