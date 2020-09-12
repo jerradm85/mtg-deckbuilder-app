@@ -2,9 +2,43 @@
     box-sizing: border-box;
 }
 
-.createDeck {
+.create_container {
+    border: 1px red solid;
+}
+
+.create_form {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    max-width: 400px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.create_field {
+
+}
+
+.form_input {
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
+.card_select {
+
+}
+
+.create_list {
+    text-align: left;
+    width: 100px;
+    list-style-type: none;
+}
+
+.text_area {
+    width: 400px;
+    height: 200px;
 }

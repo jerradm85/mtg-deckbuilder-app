@@ -2,8 +2,41 @@ img {
     max-width: 200px;
 }
 
-.AboutDeck {
+.deck_container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px black solid;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.about_deck {
     border: 1px gray solid;
     max-width: 600px;
     height: 300px;
+}
+
+.deck_title {
+    text-align: center;
+}
+
+.about_deck {
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    right: 20px;
+    list-style-type: none;
+}
+
+.back_button {
+    margin: 0 auto;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px black solid;
+    width: 100px;
 }

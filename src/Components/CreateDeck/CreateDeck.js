@@ -18,7 +18,7 @@ class CreateDeck extends React.Component {
     }
 
     handleAddCard = e => {
-        e.preventDefault();
+        e.preventDefault()
         const cardId = this.state.value;
         const card = this.context.cards.find(card => card.id == cardId)
         this.setState({
@@ -26,7 +26,7 @@ class CreateDeck extends React.Component {
         })
     }
 
-    handleSubmit = e => {
+    handleCreateDeck = e => {
         e.preventDefault();
         this.props.history.push('/user')
     }
@@ -34,29 +34,30 @@ class CreateDeck extends React.Component {
     render() {
         const cards = this.context.cards;
         return (
-            <div>
-                <form className='createDeck' action="">
-                    <fieldset>
+            <div className="create_container">
+                <form className="create_form">
+                    <fieldset className="create_field">
                         <legend>Create new deck</legend>
                         <label>Name:</label>
-                        <input></input>
-                        <label>Cards:</label>
-                        <select onChange={this.handleSelection} id='cardSelect'>
-                            <option value="">Select a Card</option>
+                        <input className="form_input"></input>
+                        <select id='cardSelect' className="card_select" onChange={this.handleSelection}>
+                            <option value="">Select a card</option>
                             {cards.map(card => {
                                 return <option key={card.id} value={card.id}>{card.name}</option>
                             })}
                         </select>
-                        <button onClick={this.handleAddCard}>Add</button>
-                        <label></label>
-                        <textarea></textarea>
-                        <button onClick={this.handleSubmit}>Submit</button>
+                        <button className="add_card" onClick={this.handleAddCard}>Add</button>
+                        <label>Write about it:</label>
+                        <ul>
+                            {this.state.cards.map(card =>
+                                <li className="create_list">
+                                    {card.name}
+                                </li>
+                            )}
+                        </ul>
+                        <textarea className="text_area"></textarea>
+                        <button className="create_button" onClick={this.handleCreateDeck}>Create</button>
                     </fieldset>
-                    {this.state.cards.map(card => 
-                        <li>
-                            {card.name}
-                        </li>
-                    )}
                 </form>
                 <Link to='/user'>Back</Link>
             </div>

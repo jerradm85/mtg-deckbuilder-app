@@ -1,9 +1,15 @@
+.main_container {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .example, .about {
     border: 1px gray solid;
     display: flex;
     max-width: 800px;
-    margin: 0 auto;
+    margin: auto;
     margin-top: 30px;
+
 }
 
 .example {

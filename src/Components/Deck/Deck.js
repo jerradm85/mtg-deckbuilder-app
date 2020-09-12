@@ -12,17 +12,19 @@ class Deck extends React.Component {
             .find(deck => deck.id == this.props.match.params.deckId) || {};
         const cards = this.context.cards
         return (
-            <div>
-                <h3>{deck.title}</h3>
-                <div className="AboutDeck">
+            <div className="deck_container">
+                <h3 className="deck_title">{deck.title}</h3>
+                <ul>
+                    {cards.map(card => {
+                        return <li className="card" key={card.id}>
+                            <Link to={`/card/${card.id}`}>{card.name}</Link>
+                        </li>
+                    })}
+                </ul>
+                <div className="about_deck">
                     "About Deck" goes here.
                 </div>
-                {cards.map(card => {
-                    return <div key={card.id}>
-                        <Link to={`/card/${card.id}`}>{card.name}</Link>
-                    </div>
-                })}
-                <Link className='BackButton' to={`/user`}>Back</Link>
+                <Link className='back_button' to={`/user`}>Back</Link>
             </div>
         )
     }
