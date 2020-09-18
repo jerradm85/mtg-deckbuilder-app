@@ -1,0 +1,39 @@
+.card_container {
+    position: relative;
+    top: 100px;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.card_name {
+
+}
+
+.card_img {
+    border: 2px black solid;
+    height: auto;
+    max-width: fill;
+    margin-left: 40px;
+    margin-right: 40px; 
+}
+
+.card_text {
+    flex-direction: column;
+    border: 1px red solid;
+    width: 320px;
+}
+
+.back {
+    position: relative;
+    bottom: 10px;
+    width: 100px;
+    font-size: 20px;
+    padding-bottom: 5px;
+    text-align: center;
+    border: 1px red solid;
+}

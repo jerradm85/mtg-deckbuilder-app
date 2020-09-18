@@ -1,5 +1,7 @@
 import React from 'react'
 import './Login.css'
+import AuthService from '../../services/auth-service'
+import jwtService from '../../services/jwt-service'
 
 import Context from '../../Context';
 
@@ -7,18 +9,24 @@ class Login extends React.Component {
     static contextType = Context;
 
     handleLogin = e => {
+        e.preventDefault()
 
-        const username = e.target.username.value
-        const password = e.target.password.value
+        const { user_name, password } = e.target
 
-        this.context.setUser(username)
+        AuthService.loginServer({
+            user_name,
+            password
+        })
+        .then(res => {
+            user_name.value = ''
+            password.value = ''
+            jwtService.saveToken(res.authToken)
+            this.props.history.push('/user')
+        })
+        .catch(res => {
+            console.log(res, 'create an error handler!')
+        })
 
-        this.props.history.push('/user')
-
-        // fetch(`${'API path goes here'}/users`, {
-        //     method: "GET", // should this be a get?
-        // })
-        //     .then()
     }
 
     render() {

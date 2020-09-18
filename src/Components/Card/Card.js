@@ -1,6 +1,7 @@
 import React from 'react'
 import Context from '../../Context'
 import { Link } from 'react-router-dom'
+import './Card.css'
 
 class Card extends React.Component {
     static contextType = Context;
@@ -20,21 +21,17 @@ class Card extends React.Component {
             } else return <></>
         }) || {}
         return (
-            <div>
-                <h2>{foundCard.name}</h2>
-                <img src={foundCard.image} alt='foundCard' />
-                <p>{foundCard.text}</p>
-                <Link to={`/deck/${deck.id}`}>Back</Link>
+            <div className="card_container">
+                <h2 className="card_name">{foundCard.name}</h2>
+                <img className="card_img" src={foundCard.image} alt='foundCard' />
+                <p className="card_text">{foundCard.text}</p>
+                <Link className="back" to={`/deck/${deck.id}`}>Back</Link>
             </div>
         )
     }
 
     render() {
-        return (
-            <div>
-                {this.findCard(this.context.cards)}
-            </div>
-        )
+        return this.findCard(this.context.cards)              
     }
 }
 

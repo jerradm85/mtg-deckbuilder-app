@@ -15,7 +15,8 @@
 }
 
 .create_field {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .form_input {

@@ -3,15 +3,15 @@ import './App.css'
 import { Route, Switch, Link } from 'react-router-dom'
 import Context from './Context'
 
-import Nav from './Components/Nav/Nav'
-import Registration from './Components/Registration/Registration'
-import Login from './Components/Login/Login'
-import CreateDeck from './Components/CreateDeck/CreateDeck'
-import UpdateDeck from './Components/UpdateDeck/UpdateDeck'
-import Card from './Components/Card/Card'
-import User from './Components/User/User'
-import Deck from './Components/Deck/Deck'
-import Example from './Components/Main/Main'
+import Nav from './components/Nav/Nav'
+import Registration from './components/Registration/Registration'
+import Login from './components/Login/Login'
+import CreateDeck from './components/CreateDeck/CreateDeck'
+import UpdateDeck from './components/UpdateDeck/UpdateDeck'
+import Card from './components/Card/Card'
+import User from './components/User/User'
+import Deck from './components/Deck/Deck'
+import Example from './components/Main/Main'
 
 
 
@@ -56,19 +56,12 @@ class App extends React.Component {
     ]
   }
 
-  setUser = (user) => {
-    this.setState({
-      user
-    })
-  }
-
   render() {
 
     const value = {
       user: this.state.user,
       decks: this.state.decks,
       cards: this.state.cards,
-      setUser: this.setUser,
     }
 
     return (
