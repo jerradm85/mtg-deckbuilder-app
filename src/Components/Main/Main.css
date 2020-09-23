@@ -4,7 +4,9 @@
 }
 
 .example, .about {
+    color: gray;
     border: 1px gray solid;
+    background: rgba(0,0,0,0.90);
     display: flex;
     max-width: 800px;
     margin: auto;
@@ -52,6 +54,6 @@ p {
 }
 
 .img {
-    max-width: fill;
+    max-width: stretch;
     height: auto;
 }

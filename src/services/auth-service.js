@@ -1,7 +1,7 @@
 import config from '../config'
 
 const AuthService = {
-    loginServer(creds) {
+    postLogin(creds) {
         return fetch(`${config.API_ENDPOINT}/auth/login`, {
             method: 'POST',
             headers: {

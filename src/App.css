@@ -8,3 +8,9 @@ h1 {
     margin-left: 10px;
     max-width: 300px;
 }
+
+body {
+    margin-top: -25px;
+    padding-bottom: 25px;
+    background: url("resources/deckbuilder-background.png") no-repeat center center fixed;
+}

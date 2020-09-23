@@ -3,7 +3,10 @@
 }
 
 .create_container {
-    border: 1px red solid;
+    border: 1px gray solid;
+    background: rgba(0,0,0,.90);
+    width: 550px;
+    margin: 0 auto;
 }
 
 .create_form {
@@ -12,15 +15,22 @@
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
+    justify-content: center;
 }
 
 .create_field {
-    display: flex;
-    flex-direction: column;
+    border: 0;
 }
 
-.form_input {
+.create_legend {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(39, 197, 0)
+}
+
+.create_input {
     border: 1px black solid;
+    display: flex;
     border-radius: 10px;
     padding: 10px;
     font-size: 20px;
@@ -29,17 +39,24 @@
 }
 
 
-.card_select {
-
+.create_card_image {
+    display: flex;
+    max-width: stretch;
+    margin: 0 auto;
+    padding-bottom: 10px;
 }
 
 .create_list {
+    flex-direction: row;
     text-align: left;
     width: 100px;
     list-style-type: none;
 }
 
 .text_area {
+    resize: none;
+    overflow-y: scroll;
+    margin: 0 auto;
     width: 400px;
     height: 200px;
 }

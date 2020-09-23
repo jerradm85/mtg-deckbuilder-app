@@ -2,64 +2,108 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './CreateDeck.css'
 import Context from '../../Context'
+import DecksService from '../../services/decks-service'
 
 class CreateDeck extends React.Component {
     static contextType = Context;
     state = {
         value: null,
-        cards: []
+        image: " ",
+        cards: [],
+        deckCards: [],
     }
 
-    handleSelection = e => {
+    handleGetImage = (value, cards) => {
+        const foundCard = cards.find(card => parseInt(card.id) === parseInt(value))
+        const spreadCard = { ...foundCard };
+        this.setState({
+            image: spreadCard.image
+        })
+    }
+
+    handleSelection = (e, cards) => {
         const card = e.target.value;
+        this.handleGetImage(card, cards)
         this.setState({
             value: card
-        });
+        })
     }
 
     handleAddCard = e => {
-        e.preventDefault()
+        e.preventDefault();
         const cardId = this.state.value;
-        const card = this.context.cards.find(card => card.id == cardId)
+        const card = this.context.cards.find(card => parseInt(card.id) === parseInt(cardId));
+        console.log(card, cardId, this.state.cards)
         this.setState({
-            cards: this.state.cards.concat(card)
-        })
+            cards: this.state.cards.concat(card),
+            deckCards: this.state.deckCards.concat(card)
+        }, () => {
+            const cardsArr = this.state.cards
+            const dCards = this.state.deckCards
+            console.log(cardsArr, dCards)
+        });
     }
 
     handleCreateDeck = e => {
         e.preventDefault();
-        this.props.history.push('/user')
+
+        const name = e.target.deck_name.value;
+        const cards = this.state.cards;
+        const text = e.target.about_deck.value;
+
+        if (!name) {
+            throw new Error('Name required.')
+        }
+
+        const deck = {
+            name,
+            cards,
+            text
+        }
+
+        DecksService.postDeck(deck)
+            .then(deck => {
+                this.setState({
+                    cards: []
+                })
+                this.props.history.push('/user')
+            })
     }
 
     render() {
         const cards = this.context.cards;
         return (
-            <div className="create_container">
-                <form className="create_form">
+            <div>
+                <div className="create_container">
+                <form className="create_form" onSubmit={this.handleCreateDeck}>
                     <fieldset className="create_field">
-                        <legend>Create new deck</legend>
-                        <label>Name:</label>
-                        <input className="form_input"></input>
-                        <select id='cardSelect' className="card_select" onChange={this.handleSelection}>
-                            <option value="">Select a card</option>
-                            {cards.map(card => {
-                                return <option key={card.id} value={card.id}>{card.name}</option>
-                            })}
+                        <legend className="create_legend">Create new deck</legend>
+                        <label className="create_label">Name</label>
+                        <input className="create_input" name="deck_name"></input>
+                        <img className="create_card_image" src={this.state.image} />
+                        <select id='cardSelect' className="create_card_select" onChange={(e) => this.handleSelection(e, cards)}>
+                            <option>Select a card...</option>
+                            {cards.map(card =>
+                                <option key={card.id} value={card.id}>{card.name}</option>
+                            )}
                         </select>
-                        <button className="add_card" onClick={this.handleAddCard}>Add</button>
-                        <label>Write about it:</label>
-                        <ul>
+                        <button type="button" className="create_add_card" onClick={this.handleAddCard}>Add</button>
+                        <ul className="create_list">
                             {this.state.cards.map(card =>
-                                <li className="create_list">
+                                <li>
                                     {card.name}
                                 </li>
                             )}
                         </ul>
-                        <textarea className="text_area"></textarea>
-                        <button className="create_button" onClick={this.handleCreateDeck}>Create</button>
+                        <label>Write about it</label>
+                        <textarea className="text_area" name="about_deck"></textarea>
+                        <div>
+                            <button type="submit" className="create_button">Create</button>
+                        </div>
                     </fieldset>
                 </form>
-                <Link to='/user'>Back</Link>
+            </div>
+            <Link to='/user'>Back</Link>
             </div>
         )
     }

@@ -1,5 +1,8 @@
 .user_decks_container {
+    margin-left: 50px;
+    margin-top: 50px;
     border: 1px gray solid;
+    background: rgba(0,0,0,.90);
     padding-top: 10px;
     padding-bottom:  10px;
     display: flex;
@@ -7,7 +10,19 @@
     width: 275px;
 }
 
-.deck {
+.create_deck {
+    padding-top: 5px;
+    color: rgb(31, 200, 5);
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 10px;
+    border: 1px gray solid;
+    text-align: center;
+    padding-bottom: 5px;
+    width: 100px;
+}
+
+.deckTile {
     border: 1px gray solid;
     margin-top: 20px;
     margin-left: 10px;
@@ -17,6 +32,8 @@
 }
 
 .deck_name {
+    color: rgb(31, 200, 5);
+    text-decoration: none;
     font-size: 20px;
     position: relative;
     top: 10px;
@@ -24,6 +41,9 @@
 }
 
 .deck_delete {
+    color: rgb(31, 200, 5);
+    background: rgba(0,0,0,0);
+    font-size: 16px;
     width: 75px;
     height: 25px;
     position: relative;
@@ -31,17 +51,17 @@
     bottom: 5px;
 }
 
-.create_deck {
-    font-size: 24px;
-    margin-left: 10px;
-    border: 1px gray solid;
-    text-align: center;
-    padding-bottom: 5px;
-    width: 100px;
+.deck_delete:hover {
+    cursor: pointer;
 }
+
+
 
 .edit_deck {
     border: 1px gray solid;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(184, 8, 8);
     width: 75px;
     text-align: center;
     position: relative;

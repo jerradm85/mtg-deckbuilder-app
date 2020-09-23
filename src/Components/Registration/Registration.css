@@ -2,25 +2,8 @@
     box-sizing: border-box;
 }
 
-.reg_form_input {
-    border: 1px black solid;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 20px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-}
-
-.form_field {
-    border: 2px black solid;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: column;
-    margin: auto;
-    max-width: 400px;
-}
-
 .reg_container {
+    background: rgba(0,0,0,.90);
     align-items: center;
     border: 1px gray solid;
     display: flex;
@@ -31,16 +14,53 @@
     position: relative;
     top: 200px;
     width: 350px;
-    
 }
 
 .reg_form {
     text-align: center;
+    background: rgba(0,0,0,0);
+}
+
+.reg_field {
+    border: 0;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    margin: auto;
+    max-width: 400px;
+}
+
+.reg_legend {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(36, 179, 0);
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.reg_label {
+    color: rgb(36, 179, 0);
+    font-size: 22px;
+    font-weight: 
+}
+
+.reg_form_input {
+    background: rgba(113, 112, 114, 0.50);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .reg_submit {
+    background: rgba(0,0,0,.90);
+    color:  rgb(36, 179, 0);
+    border: 1px rgb(36, 179, 0) solid;
+    border-radius: 5px;
     height: 30px;
     margin: 0 auto;
-    width: 100px;
+    margin-top: 25px;
+    width: 125px;
     font-size: 20px;
 }

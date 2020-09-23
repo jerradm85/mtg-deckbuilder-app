@@ -8,7 +8,7 @@ class Card extends React.Component {
 
     findDeck = (context) => {
         const card = context.cards.find(card => parseInt(card.id) === parseInt(this.props.match.params.cardId)) || {}
-        const deck = context.decks.find(deck => deck.id === card.deckId) || {}
+        const deck = context.decks.find(deck => deck.id === card.deck_id) || {}
 
         return deck
     }
@@ -25,7 +25,7 @@ class Card extends React.Component {
                 <h2 className="card_name">{foundCard.name}</h2>
                 <img className="card_img" src={foundCard.image} alt='foundCard' />
                 <p className="card_text">{foundCard.text}</p>
-                <Link className="back" to={`/deck/${deck.id}`}>Back</Link>
+                <Link className="back" to={`/deck/${this.props.match.params.deckId}`}>Back</Link>
             </div>
         )
     }

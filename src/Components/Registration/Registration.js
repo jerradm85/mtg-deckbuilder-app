@@ -10,22 +10,26 @@ class Registration extends React.Component {
     handleRegistration = e => {
         e.preventDefault();
 
-        const { user_name, full_name, password, repeatPass } = e.target
+        const user_name = e.target.user_name.value;
+        const full_name = e.target.full_name.value;
+        const password = e.target.password.value;
+        const repeatPass = e.target.repeatPass.value;
 
         if(password !== repeatPass) {
             throw new Error('passwords must match.')
         }
-
+        const target = e.target;
+        
         AuthService.postUser({
             user_name,
             password,
             full_name
         })
         .then(user => {
-            user_name.value = '',
-            full_name.value = '',
-            password.value = '',
-            repeatPass.value = '',
+            target.user_name.value = ''
+            target.full_name.value = ''
+            target.password.value = ''
+            target.repeatPass.value = ''
             this.props.history.push('/login')
         })
         .catch(res => {
@@ -37,15 +41,15 @@ class Registration extends React.Component {
         return (
             <div className="reg_container">
                 <form className="reg_form" action="submit" onSubmit={this.handleRegistration}>
-                    <fieldset className="form_field">
-                        <legend>New User Registration</legend>
-                        <label htmlFor="fullname">Username:</label>
+                    <fieldset className="reg_field">
+                        <legend className="reg_legend">New User Registration</legend>
+                        <label className="reg_label" htmlFor="fullname">Full Name</label>
                         <input className="reg_form_input" type="text" name="full_name"/>
-                        <label htmlFor="username">Username:</label>
+                        <label className="reg_label" htmlFor="username">Username</label>
                         <input className="reg_form_input" type="text" name="user_name" />
-                        <label htmlFor="password">Password:</label>
+                        <label className="reg_label" htmlFor="password">Password</label>
                         <input className="reg_form_input" type="text" name="password" />
-                        <label htmlFor="repeatPass">Repeat Pass:</label>
+                        <label className="reg_label" htmlFor="repeatPass">Repeat Password</label>
                         <input className="reg_form_input" type="text" name="repeatPass" />
                         <button className="reg_submit" type="submit">Register</button>
                     </fieldset>
