@@ -12,12 +12,12 @@ import Card from './components/Card/Card'
 import User from './components/User/User'
 import Deck from './components/Deck/Deck'
 import Example from './components/Main/Main'
-
+import jwtService from './services/jwt-service'
 
 
 class App extends React.Component {
   state = {
-    user: null,
+    user: jwtService.getToken(),
     decks: [],
     cards: []
   }
@@ -38,6 +38,12 @@ class App extends React.Component {
     })
   }
 
+  setUser = (user) => {
+    this.setState({
+      user
+    })
+  }
+
   render() {
 
     const value = {
@@ -45,6 +51,7 @@ class App extends React.Component {
       decks: this.state.decks,
       cards: this.state.cards,
       setDecks: this.setDecks,
+      setUser: this.setUser,
     }
 
     return (
@@ -52,7 +59,7 @@ class App extends React.Component {
         <div className="body">
           <header className="">
             <Link className="logo" to='/'><h1>MTG Deckbuilder</h1></Link>
-            <Route className='' exact path="/" component={Nav} />
+            <Route path='/' component={Nav} />
             <Route path='/register' component={Registration} />
             <Route path='/login' component={Login} />
           </header>

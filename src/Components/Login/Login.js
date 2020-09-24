@@ -23,6 +23,7 @@ class Login extends React.Component {
                 target.password.value = ''
                 jwtService.saveToken(res.authToken)
                 const { location, history } = this.props
+                this.context.setUser(user_name)
                 const destination = (location.state || {}).from || '/user'
                 history.push(destination)
             })
