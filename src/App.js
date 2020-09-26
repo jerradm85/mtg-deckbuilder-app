@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Context from './Context'
 import config from './config'
 import Nav from './components/Nav/Nav'
@@ -11,7 +11,7 @@ import UpdateDeck from './components/UpdateDeck/UpdateDeck'
 import Card from './components/Card/Card'
 import User from './components/User/User'
 import Deck from './components/Deck/Deck'
-import Example from './components/Main/Main'
+import Main from './components/Main/Main'
 import jwtService from './services/jwt-service'
 
 
@@ -24,12 +24,12 @@ class App extends React.Component {
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/cards`)
-    .then(res => res.json())
-    .then(cards => {
-      this.setState({
-        cards
+      .then(res => res.json())
+      .then(cards => {
+        this.setState({
+          cards
+        })
       })
-    })
   }
 
   setDecks = (decks) => {
@@ -44,6 +44,12 @@ class App extends React.Component {
     })
   }
 
+  deleteDeck = (deckId) => {
+    this.setState({
+      decks: this.state.decks.filter(deck => parseInt(deck.id) !== parseInt(deckId))
+    })
+  }
+
   render() {
 
     const value = {
@@ -52,19 +58,19 @@ class App extends React.Component {
       cards: this.state.cards,
       setDecks: this.setDecks,
       setUser: this.setUser,
+      deleteDeck: this.deleteDeck,
     }
 
     return (
       <Context.Provider value={value}>
         <div className="body">
           <header className="">
-            <Link className="logo" to='/'><h1>MTG Deckbuilder</h1></Link>
             <Route path='/' component={Nav} />
             <Route path='/register' component={Registration} />
             <Route path='/login' component={Login} />
           </header>
           <main>
-            <Route exact path="/" component={Example} />
+            <Route exact path="/" component={Main} />
           </main>
           <Route path='/user' component={User} />
           <Route path='/create' component={CreateDeck} />

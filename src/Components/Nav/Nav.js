@@ -19,11 +19,10 @@ class Nav extends React.Component {
             <div className="nav">
                 {
                     this.context.user ? (<>
-                        <button onClick={this.handleLogout}>Logout</button>
+                        <Link className="home glow-button" to='/user'>MTG Deckbuilder</Link>
+                        <Link className="logout glow-button" to="" onClick={this.handleLogout}>Logout</Link>
                     </>) : (<>
-                        <Link to='/login'>Login</Link>
-                        {' '}
-                        <Link to='/register'>Register</Link>
+                        <Link className="login glow-button hidden" to='/login'>Login</Link>
                     </>)
                 }
             </div>

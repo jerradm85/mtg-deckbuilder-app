@@ -1,9 +1,39 @@
 .nav {
-   position: relative;
+   margin-top: 20px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-evenly;
    text-align: right;
-   bottom: 55px;
    font-size: 20px;
    font-weight: bold;
-   margin-left: 350px;
+}
+
+.login, .logout, .home {
+   cursor: pointer;
+   background: rgba(0,0,0,.90);
+   text-decoration: none;
+   font-family: 'Uncial Antiqua', cursive;
+   color: rgb(115, 5, 179);
+   border: 2px gray solid;
+   letter-spacing: 2px;
+   font-size: 20px;
+   border-radius: 5px;
+   padding-left: 25px;
+   padding-right: 25px;
+   padding-bottom: 7px;
+   padding-top: 5px;
    margin-right: 10px;
 }
+
+
+
+.glow-button:hover {
+   color: rgb(255, 255, 255);
+   box-shadow: 0 5px 15px rgb(115, 5, 179, 0.4);
+ }
+
+ .hidden {
+    display: none;
+ }
+

@@ -6,8 +6,6 @@ import DecksService from '../../services/decks-service'
 import jwtService from '../../services/jwt-service'
 import './User.css'
 
-import Nav from '../Nav/Nav'
-
 class User extends React.Component {
     static contextType = Context;
 
@@ -25,25 +23,26 @@ class User extends React.Component {
 
     deleteDeck = (deckId) => {
         return DecksService.deleteDeck(deckId)
-            .then(deck => {
-                this.setState({
-                    decks: this.context.decks.filter(deck => deck.id !== parseInt(deckId))
-                })
+            .then(() => {
+                this.context.deleteDeck(deckId);
+                this.props.history.push("/user")
             })
     }
 
     render() {
         const decks = this.context.decks;
         return (
-            <div className="user_decks_container">
-                <Link className="create_deck" to={`/create`}>+ Deck</Link>
-                {decks.map(deck =>
-                    <div className="deckTile" key={deck.id}>
-                        <Link className="deck_name" to={`/deck/${deck.id}`}>{deck.name}</Link>
-                        <Link className="edit_deck" to={`/update`}>Edit</Link>
-                        <button className="deck_delete" onClick={() => this.deleteDeck(deck.id)}>Delete</button>
-                    </div>
-                )}
+            <div>
+                <div className="user_decks_container">
+                    <Link className="create_deck glow-button" to={`/create`}>+ Deck</Link>
+                    {decks.map(deck =>
+                        <div className="deckTile" key={deck.id}>
+                            <Link className="deck_name glow-button" to={`/deck/${deck.id}`}>{deck.name}</Link>
+                            <Link className="edit_deck glow-button" to={`/user`}>Edit</Link>
+                            <Link className="deck_delete glow-red" to="/user" onClick={() => this.deleteDeck(deck.id)}>Delete</Link>
+                        </div>
+                    )}
+                </div>
             </div>
         )
     }

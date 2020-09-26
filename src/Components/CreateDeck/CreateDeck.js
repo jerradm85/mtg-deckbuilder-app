@@ -32,6 +32,9 @@ class CreateDeck extends React.Component {
     handleAddCard = e => {
         e.preventDefault();
         const cardId = this.state.value;
+        if(!cardId) {
+            return
+        }
         const card = this.context.cards.find(card => parseInt(card.id) === parseInt(cardId));
         console.log(card, cardId, this.state.cards)
         this.setState({
@@ -52,7 +55,7 @@ class CreateDeck extends React.Component {
         const text = e.target.about_deck.value;
 
         if (!name) {
-            throw new Error('Name required.')
+            return
         }
 
         const deck = {
@@ -77,17 +80,17 @@ class CreateDeck extends React.Component {
                 <div className="create_container">
                 <form className="create_form" onSubmit={this.handleCreateDeck}>
                     <fieldset className="create_field">
-                        <legend className="create_legend">Create new deck</legend>
+                        <legend className="create_legend">Create a Deck</legend>
                         <label className="create_label">Name</label>
                         <input className="create_input" name="deck_name"></input>
-                        <img className="create_card_image" src={this.state.image} />
+                        <img className="create_card_image" src={this.state.image} alt="" />
                         <select id='cardSelect' className="create_card_select" onChange={(e) => this.handleSelection(e, cards)}>
                             <option>Select a card...</option>
                             {cards.map(card =>
                                 <option key={card.id} value={card.id}>{card.name}</option>
                             )}
                         </select>
-                        <button type="button" className="create_add_card" onClick={this.handleAddCard}>Add</button>
+                        <Link type="button" className="create_add_card glow-button" to="" onClick={this.handleAddCard}>Add</Link>
                         <ul className="create_list">
                             {this.state.cards.map(card =>
                                 <li>
@@ -95,15 +98,15 @@ class CreateDeck extends React.Component {
                                 </li>
                             )}
                         </ul>
-                        <label>Write about it</label>
+                        <label className="create_label">Write about it</label>
                         <textarea className="text_area" name="about_deck"></textarea>
                         <div>
-                            <button type="submit" className="create_button">Create</button>
+                            <button type="submit" className="create_button glow-button">Create</button>
                         </div>
                     </fieldset>
+                    <Link className="create_back glow-button" to='/user'>Back</Link>
                 </form>
             </div>
-            <Link to='/user'>Back</Link>
             </div>
         )
     }

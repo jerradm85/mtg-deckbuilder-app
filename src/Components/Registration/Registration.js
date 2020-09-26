@@ -16,7 +16,7 @@ class Registration extends React.Component {
         const repeatPass = e.target.repeatPass.value;
 
         if(password !== repeatPass) {
-            throw new Error('passwords must match.')
+            return
         }
         const target = e.target;
         
@@ -42,16 +42,16 @@ class Registration extends React.Component {
             <div className="reg_container">
                 <form className="reg_form" action="submit" onSubmit={this.handleRegistration}>
                     <fieldset className="reg_field">
-                        <legend className="reg_legend">New User Registration</legend>
+                        <legend className="reg_legend">Registration</legend>
                         <label className="reg_label" htmlFor="fullname">Full Name</label>
-                        <input className="reg_form_input" type="text" name="full_name"/>
+                        <input className="reg_form_input" type="text" name="full_name" required/>
                         <label className="reg_label" htmlFor="username">Username</label>
-                        <input className="reg_form_input" type="text" name="user_name" />
+                        <input className="reg_form_input" type="text" name="user_name" required/>
                         <label className="reg_label" htmlFor="password">Password</label>
-                        <input className="reg_form_input" type="text" name="password" />
+                        <input className="reg_form_input" type="text" name="password" required/>
                         <label className="reg_label" htmlFor="repeatPass">Repeat Password</label>
-                        <input className="reg_form_input" type="text" name="repeatPass" />
-                        <button className="reg_submit" type="submit">Register</button>
+                        <input className="reg_form_input" type="text" name="repeatPass" required/>
+                        <button className="reg_submit glow-button" type="submit">Register</button>
                     </fieldset>
                 </form>
             </div>

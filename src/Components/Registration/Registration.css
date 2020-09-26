@@ -3,11 +3,11 @@
 }
 
 .reg_container {
+    font-family: 'Uncial Antiqua', cursive;
     background: rgba(0,0,0,.90);
     align-items: center;
     border: 1px gray solid;
     display: flex;
-    height: 450px;
     justify-content: center;
     margin: 0 auto;
     padding: 10px;
@@ -19,6 +19,7 @@
 .reg_form {
     text-align: center;
     background: rgba(0,0,0,0);
+    color: rgb(115, 5, 179);
 }
 
 .reg_field {
@@ -31,21 +32,19 @@
 }
 
 .reg_legend {
-    font-size: 24px;
-    font-weight: bold;
-    color: rgb(36, 179, 0);
+    font-size: 28px;
     margin-bottom: 10px;
     text-decoration: underline;
 }
 
 .reg_label {
-    color: rgb(36, 179, 0);
     font-size: 22px;
     font-weight: 
 }
 
 .reg_form_input {
-    background: rgba(113, 112, 114, 0.50);
+    background: rgba(61, 61, 61, 0.815);
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 10px;
     font-size: 20px;
@@ -54,13 +53,20 @@
 }
 
 .reg_submit {
-    background: rgba(0,0,0,.90);
-    color:  rgb(36, 179, 0);
-    border: 1px rgb(36, 179, 0) solid;
+    color: rgb(115, 5, 179);
+    background: rgba(0, 0, 0, .01);
+    font-family: 'Uncial Antiqua', cursive;
+    text-decoration: none;
     border-radius: 5px;
-    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px gray solid;
+    font-size: 24px;
+    display: flex;
     margin: 0 auto;
-    margin-top: 25px;
-    width: 125px;
-    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
 }

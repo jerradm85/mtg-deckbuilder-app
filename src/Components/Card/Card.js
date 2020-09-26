@@ -25,7 +25,7 @@ class Card extends React.Component {
                 <h2 className="card_name">{foundCard.name}</h2>
                 <img className="card_img" src={foundCard.image} alt='foundCard' />
                 <p className="card_text">{foundCard.text}</p>
-                <Link className="back" to={`/deck/${this.props.match.params.deckId}`}>Back</Link>
+                <Link className="back glow-button" to={`/deck/${this.props.match.params.deckId}`}>Back</Link>
             </div>
         )
     }

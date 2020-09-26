@@ -3,6 +3,7 @@
 }
 
 .login_container {
+    font-family: 'Uncial Antiqua', cursive;
     align-items: center;
     border: 1px gray solid;
     background: rgba(0,0,0,.90);
@@ -16,8 +17,8 @@
 }
 
 .login_form {
+    color: rgb(115, 5, 179);
     text-align: center;
-    background: rgba(0,0,0,0);
 }
 
 .login_field {
@@ -31,20 +32,19 @@
 
 .login_legend {
     font-size: 24px;
-    font-weight: bold;
-    color: rgb(36, 179, 0);
-    margin-bottom: 10px;
     text-decoration: underline;
+    margin-bottom: 10px;
 }
 
 .login_label {
-    color: rgb(36, 179, 0);
     font-size: 22px;
     font-weight: 
 }
 
 .login_input {
-    background: rgba(113, 112, 114, 0.50);
+    color: white;
+    text-align: center;
+    background: rgb(66, 66, 66);
     border-radius: 10px;
     padding: 10px;
     font-size: 20px;
@@ -52,14 +52,6 @@
     margin-bottom: 10px;
 }
 
-.login_submit {
+.login{
     background: rgba(0,0,0,.90);
-    color:  rgb(36, 179, 0);
-    border: 1px rgb(36, 179, 0) solid;
-    border-radius: 5px;
-    height: 30px;
-    margin: 0 auto;
-    margin-top: 25px;
-    width: 125px;
-    font-size: 20px;
 }

@@ -2,11 +2,26 @@
     box-sizing: border-box;
 }
 
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .create_container {
-    border: 1px gray solid;
+    font-family: 'Uncial Antiqua', cursive;
+    color: rgb(115, 5, 179);
+    align-items: center;
+    border: 2px gray solid;
+    border-radius: 5px;
     background: rgba(0,0,0,.90);
-    width: 550px;
+    justify-content: center;
     margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    top: 100px;
+    width: 500px;
 }
 
 .create_form {
@@ -23,13 +38,14 @@
 }
 
 .create_legend {
+    letter-spacing: 1px;
     font-size: 24px;
-    font-weight: bold;
-    color: rgb(39, 197, 0)
+    text-decoration: underline;
 }
 
 .create_input {
-    border: 1px black solid;
+    background: rgba(53, 53, 53, 0.75);
+    color: rgba(177, 177, 177);
     display: flex;
     border-radius: 10px;
     padding: 10px;
@@ -38,25 +54,80 @@
     margin-bottom: 10px;
 }
 
+.create_label {
+    font-size: 20px;
+}
+
 
 .create_card_image {
     display: flex;
     max-width: stretch;
     margin: 0 auto;
-    padding-bottom: 10px;
+}
+
+.create_card_select {
+    background: rgba(53, 53, 53, 0.75);
+    color: rgba(177, 177, 177);
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.create_add_card {
+    color: rgb(115, 5, 179);
+    border: 1px gray solid;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
 }
 
 .create_list {
-    flex-direction: row;
     text-align: left;
-    width: 100px;
+    width: 200px;
     list-style-type: none;
 }
 
+.create_button {
+    background: rgba(0,0,0,0);
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 20px;
+    color: rgb(115, 5, 179);
+    border: 2px gray solid;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .text_area {
+    background: rgba(41, 40, 40, 0.9);
+    color: rgba(177, 177, 177);
+    font-size: 16px;
     resize: none;
     overflow-y: scroll;
     margin: 0 auto;
     width: 400px;
     height: 200px;
+}
+
+.create_back {
+    width: 125px;
+    color: rgb(115, 5, 179);
+    margin: 0 auto;
+    border: 2px gray solid;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: rgb(0,0,0,.95);
+    font-size: 20px;
+    font-family: 'Uncial Antiqua', cursive;
+    text-decoration: none;
 }

@@ -4,11 +4,6 @@
     min-height: calc(100vh - 80px);
 }
 
-h1 {
-    margin-left: 10px;
-    max-width: 300px;
-}
-
 body {
     margin-top: -25px;
     padding-bottom: 25px;

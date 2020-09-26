@@ -1,53 +1,78 @@
 .user_decks_container {
-    margin-left: 50px;
+    border-radius: 5px;
+    color: rgb(115, 5, 179);
+    margin-left: 300px;
     margin-top: 50px;
-    border: 1px gray solid;
+    font-family: 'Uncial Antiqua', cursive;
+    border: 2px gray solid;
     background: rgba(0,0,0,.90);
     padding-top: 10px;
     padding-bottom:  10px;
     display: flex;
     flex-direction: column;
-    width: 275px;
+    width: 350px;
 }
 
 .create_deck {
     padding-top: 5px;
-    color: rgb(31, 200, 5);
+    color: rgb(115, 5, 179, 0.9);
     text-decoration: none;
     font-size: 24px;
     margin-left: 10px;
-    border: 1px gray solid;
+    border: 2px gray solid;
     text-align: center;
     padding-bottom: 5px;
-    width: 100px;
+    width: 120px;
 }
 
+
+.glow-red:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(238, 36, 0, 0.4);
+  }
+
 .deckTile {
-    border: 1px gray solid;
+    color: rgb(115, 5, 179);
+    border: 2px gray solid;
+    font-weight: bold;
     margin-top: 20px;
     margin-left: 10px;
-    width: 250px;
+    width: 325px;
     display: flex;
     flex-direction: column;
 }
 
 .deck_name {
-    color: rgb(31, 200, 5);
+    display: flex;
+    color: rgb(115, 5, 179);
+    justify-content: center;
+    align-items: center;
+    border: 1px gray solid;
+    padding: 5px;
+    max-width: 180px;
     text-decoration: none;
     font-size: 20px;
     position: relative;
-    top: 10px;
-    left: 20px;
+    top: 20px;
+    left: 10px;
 }
 
-.deck_delete {
-    color: rgb(31, 200, 5);
+.deck_delete, .edit_deck {
+    display: flex;
+    border: 1px gray solid;
+    padding-top: 2px;
+    margin-top: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     background: rgba(0,0,0,0);
+    font-family: 'Uncial Antiqua', cursive;
     font-size: 16px;
-    width: 75px;
-    height: 25px;
+    width: 100px;
+    height: 40px;
     position: relative;
-    left: 168px;
+    left: 215px;
     bottom: 5px;
 }
 
@@ -55,16 +80,6 @@
     cursor: pointer;
 }
 
-
-
-.edit_deck {
-    border: 1px gray solid;
-    font-size: 18px;
-    text-decoration: none;
-    color: rgb(184, 8, 8);
-    width: 75px;
-    text-align: center;
-    position: relative;
-    left: 168px;
-    bottom: 10px;
+.deck_delete {
+    color: darkred;
 }

@@ -14,6 +14,11 @@ class Login extends React.Component {
         const user_name = e.target.user_name.value;
         const password = e.target.password.value;
         const target = e.target
+
+        if(!user_name || !password) {
+            return
+        }
+
         AuthService.postLogin({
             user_name,
             password,
@@ -30,7 +35,6 @@ class Login extends React.Component {
             .catch(res => {
                 console.log(res, 'create an error handler!')
             })
-
     }
 
     render() {
@@ -42,8 +46,8 @@ class Login extends React.Component {
                         <label className="login_label" htmlFor="username">Username</label>
                         <input className="login_input" type="text" name="user_name" />
                         <label className="login_label" htmlFor="password">Password</label>
-                        <input className="login_input" type="text" name="password" />
-                        <button className="login_submit" type="submit">Login</button>
+                        <input className="login_input" type="password" name="password" />
+                        <button className="regbutton glow-button login" type="submit">Login</button>
                     </fieldset>
                 </form>
             </div>
