@@ -93,6 +93,7 @@
 }
 
 .create_button {
+    cursor: pointer;
     background: rgba(0,0,0,0);
     font-family: 'Uncial Antiqua', cursive;
     font-size: 20px;

@@ -36,15 +36,19 @@ h3 {
     font-size: 30px;
 }
 
-.deck_summary {
+.deck_about {
+    font-size: 24px;
+    text-align: center;
+}
+
+.text_field {
     background: rgba(0,0,0,0);
-    border: 3px rgba(124, 124, 124, 0.849) solid;
+    border: 2px gray solid;
     font-family: 'Trebuchet MS';
     color: gray;
-    font-size: 16px;
-    text-align: left;
+    font-size: 18px;
+    text-align: center;
     padding: 10px;
-    border: 1px gray solid;
     max-width: 600px;
 }
 
@@ -61,13 +65,7 @@ h3 {
     color: rgb(115, 5, 179);
     justify-content: center;
     align-items: center;
-    /* text-decoration: none; */
     font-size: 18px;
-}
-
-.deck_about {
-    font-size: 24px;
-    text-align: center;
 }
 
 .deck_back {

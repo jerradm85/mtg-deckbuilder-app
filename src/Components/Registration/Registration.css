@@ -70,3 +70,8 @@
     text-align: center;
     width: 150px;
 }
+
+.red {
+    color: red;
+    font-family: 'Trebuchet MS'
+}

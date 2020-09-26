@@ -8,6 +8,10 @@ import Context from '../../Context';
 class Login extends React.Component {
     static contextType = Context;
 
+    state = { 
+        error: null 
+    }
+
     handleLogin = e => {
         e.preventDefault()
 
@@ -15,7 +19,17 @@ class Login extends React.Component {
         const password = e.target.password.value;
         const target = e.target
 
-        if(!user_name || !password) {
+        if (!user_name || user_name.trim() === "") {
+            this.setState({
+                error: 'Please enter a username.'
+            })
+            return
+        }
+
+        if (!password || password.trim() === "") {
+            this.setState({
+                error: 'Please enter a password.'
+            })
             return
         }
 
@@ -33,11 +47,14 @@ class Login extends React.Component {
                 history.push(destination)
             })
             .catch(res => {
-                console.log(res, 'create an error handler!')
+                this.setState({
+                    error: res.error
+                })
             })
     }
 
     render() {
+        const { error } = this.state;
         return (
             <div className="login_container">
                 <form className="login_form" action="login" onSubmit={this.handleLogin}>
@@ -47,6 +64,9 @@ class Login extends React.Component {
                         <input className="login_input" type="text" name="user_name" />
                         <label className="login_label" htmlFor="password">Password</label>
                         <input className="login_input" type="password" name="password" />
+                        <div role='alert'>
+                            {error && <p className='red'>{error}</p>}
+                        </div>
                         <button className="regbutton glow-button login" type="submit">Login</button>
                     </fieldset>
                 </form>

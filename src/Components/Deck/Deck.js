@@ -17,7 +17,6 @@ class Deck extends React.Component {
             }))
     }
 
-
     render() {
         const deck = this.context.decks
             .find(deck =>
@@ -39,7 +38,7 @@ class Deck extends React.Component {
                         })}
                     </ul>
                     <div className="deck_about">About</div>
-                    <div className="deck_summary">
+                    <div className="text_field">
                         {deck.text}
                     </div>
                 </div>
