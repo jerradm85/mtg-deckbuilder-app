@@ -6,6 +6,11 @@ import './Deck.css'
 
 class Deck extends React.Component {
     static contextType = Context;
+    static defaultProps = {
+        match: {
+            params: {}
+        }
+    }
     state = {
         cards: [],
     }

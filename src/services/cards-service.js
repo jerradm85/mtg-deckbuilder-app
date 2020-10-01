@@ -2,6 +2,19 @@ import config from '../config'
 import jwtService from './jwt-service'
 
 const CardsService = {
+    getAllCards() {
+        return fetch(`${config.API_ENDPOINT}/cards`)
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json())
+            .then(cards => {
+                this.setState({
+                    cards
+                })
+            })
+    },
+    
     postDeckCards(cardArr) {
         return fetch(`${config.API_ENDPOINT}/deckcards`, {
             method: 'POST',
@@ -25,7 +38,7 @@ const CardsService = {
                 'content-type': 'application/json'
             }
         })
-        .then(res => res.json())
+            .then(res => res.json())
     }
 }
 

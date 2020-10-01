@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Card from './Card';
+import CreateDeck from './CreateDeck'
 import { MemoryRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MemoryRouter>
-      <Card />
+      <CreateDeck />
     </MemoryRouter>,
     div
   );

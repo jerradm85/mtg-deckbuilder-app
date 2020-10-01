@@ -38,6 +38,12 @@ class Registration extends React.Component {
             full_name
         })
             .then(user => {
+                if (user.error) {
+                    this.setState({
+                        error: user.error
+                    })
+                    return
+                }
                 target.user_name.value = ''
                 target.full_name.value = ''
                 target.password.value = ''
@@ -63,9 +69,9 @@ class Registration extends React.Component {
                         <label className="reg_label" htmlFor="username">Username</label>
                         <input className="reg_form_input" type="text" name="user_name" required />
                         <label className="reg_label" htmlFor="password">Password</label>
-                        <input className="reg_form_input" type="text" name="password" required />
+                        <input className="reg_form_input" type="password" name="password" required />
                         <label className="reg_label" htmlFor="repeatPass">Repeat Password</label>
-                        <input className="reg_form_input" type="text" name="repeatPass" required />
+                        <input className="reg_form_input" type="password" name="repeatPass" required />
                         <div role='alert'>
                             {error && <p className='red'>{error}</p>}
                         </div>

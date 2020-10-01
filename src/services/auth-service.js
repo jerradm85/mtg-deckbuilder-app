@@ -24,9 +24,7 @@ const AuthService = {
             body: JSON.stringify(newUser)
         })
             .then(res => {
-                if (!res.ok) {
-                    throw new Error('Something went wrong.')
-                } return res.json();
+                 return res.json();
             })
     },
 }

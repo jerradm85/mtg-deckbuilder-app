@@ -81,39 +81,39 @@ class CreateDeck extends React.Component {
         const cards = this.context.cards;
         const error = this.state.error;
         return (
-                <div className="create_container">
-                    <form className="create_form" onSubmit={this.handleCreateDeck}>
-                        <fieldset className="create_field">
-                            <legend className="create_legend">Create a Deck</legend>
-                            <label className="create_label">Name</label>
-                            <input className="create_input" name="deck_name" required />
-                            <div role='alert'>
-                                {error && <p className='red'>{error}</p>}
-                            </div>
-                            <img className="create_card_image" src={this.state.image} alt="" />
-                            <select id='cardSelect' className="create_card_select" onChange={(e) => this.handleSelection(e, cards)}>
-                                <option>Select a card...</option>
-                                {cards.map(card =>
-                                    <option key={card.id} value={card.id}>{card.name}</option>
-                                )}
-                            </select>
-                            <Link type="button" className="create_add_card glow-button" to="" onClick={this.handleAddCard}>Add</Link>
-                            <ul className="create_list">
-                                {this.state.cards.map(card =>
-                                    <li>
-                                        {card.name}
-                                    </li>
-                                )}
-                            </ul>
-                            <label className="create_label">Write about it</label>
-                            <textarea className="text_area" name="about_deck"></textarea>
-                            <div>
-                                <button type="submit" className="create_button glow-button">Create</button>
-                            </div>
-                        </fieldset>
-                        <Link className="create_back glow-button" to='/user'>Back</Link>
-                    </form>
-                </div>
+            <div className="create_container">
+                <form className="create_form" onSubmit={this.handleCreateDeck}>
+                    <fieldset className="create_field">
+                        <legend className="create_legend">Create a Deck</legend>
+                        <label className="create_label">Name</label>
+                        <input className="create_input" name="deck_name" required />
+                        <div role='alert'>
+                            {error && <p className='red'>{error}</p>}
+                        </div>
+                        <img className="create_card_image" src={this.state.image} alt="" />
+                        <select id='cardSelect' className="create_card_select" onChange={(e) => this.handleSelection(e, cards)}>
+                            <option>Select a card...</option>
+                            {cards.map(card =>
+                                <option key={card.id} value={card.id}>{card.name}</option>
+                            )}
+                        </select>
+                        <Link type="button" className="create_add_card glow-button" to="" onClick={this.handleAddCard}>Add</Link>
+                        <ul className="create_list">
+                            {this.state.cards.map(card =>
+                                <li>
+                                    {card.name}
+                                </li>
+                            )}
+                        </ul>
+                        <label className="create_label">Write about it</label>
+                        <textarea className="text_area" name="about_deck"></textarea>
+                        <div>
+                            <button type="submit" className="create_button glow-button">Create</button>
+                        </div>
+                    </fieldset>
+                    <Link className="create_back glow-button" to='/user'>Back</Link>
+                </form>
+            </div>
         )
     }
 }

@@ -6,6 +6,12 @@ import './Card.css'
 class Card extends React.Component {
     static contextType = Context;
 
+    static defaultProps = {
+        match: {
+            params: {}
+        }
+    }
+
     findDeck = (context) => {
         const card = context.cards.find(card => parseInt(card.id) === parseInt(this.props.match.params.cardId)) || {}
         const deck = context.decks.find(deck => deck.id === card.deck_id) || {}

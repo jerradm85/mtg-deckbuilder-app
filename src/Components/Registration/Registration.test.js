@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Card from './Card';
+import Registration from './Registration';
 import { MemoryRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MemoryRouter>
-      <Card />
+      <Registration />
     </MemoryRouter>,
     div
   );
