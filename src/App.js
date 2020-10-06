@@ -73,7 +73,6 @@ class App extends React.Component {
           </main>
           <Route path='/user' component={User} />
           <Route path='/create' component={CreateDeck} />
-          <Route path='/update' component={UpdateDeck} />
           <Route path='/card/:deckId/:cardId' component={Card} />
           <Route path='/deck/:deckId' component={Deck} />
         </div>
