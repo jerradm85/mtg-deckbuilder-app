@@ -50,6 +50,7 @@ class Main extends React.Component {
                     </div>
                     <div className="login_footer">
                         <p>Already a member? Login!</p>
+                        <p>Thinkful Grader? Login with User:Test Password:password</p>
                         <Link className="regbutton glow-button" to='/login'>Login</Link>
                     </div>
                 </section>
