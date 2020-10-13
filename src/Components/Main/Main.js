@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 class Main extends React.Component {
     render() {
-        const image = `https://photos.google.com/album/AF1QipPYkeexqH8kScrj9f0mtcmwV3l_GsaXxa75eMZ4/photo/AF1QipOLr-7-UOI2ZblC7WPJIEmtY65v2xThKZWqfjit`;
         return (
             <div className="main_container">
                 <section className="about">

@@ -1,9 +1,9 @@
 .user_decks_container {
     border-radius: 5px;
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     margin-left: 50px;
     margin-top: 50px;
-    font-family: 'Uncial Antiqua', cursive;
+    font-family: 'Fondamento', cursive;
     border: 2px gray solid;
     background: rgba(0,0,0,.90);
     padding-top: 10px;
@@ -15,7 +15,7 @@
 
 .create_deck {
     padding-top: 5px;
-    color: rgb(115, 5, 179, 0.9);
+    color: rgb(52, 200, 33);
     text-decoration: none;
     font-size: 24px;
     margin-left: 10px;
@@ -32,7 +32,7 @@
   }
 
 .deckTile {
-    color: rgb(115, 5, 179);
+    color:rgb(52, 200, 33);
     border: 2px gray solid;
     font-weight: bold;
     margin-top: 20px;
@@ -44,7 +44,7 @@
 
 .deck_name {
     display: flex;
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     justify-content: center;
     align-items: center;
     border: 1px gray solid;
@@ -67,7 +67,7 @@
     justify-content: center;
     text-decoration: none;
     background: rgba(0,0,0,0);
-    font-family: 'Uncial Antiqua', cursive;
+    font-family: 'Fondamento', cursive;
     font-size: 16px;
     width: 100px;
     height: 40px;

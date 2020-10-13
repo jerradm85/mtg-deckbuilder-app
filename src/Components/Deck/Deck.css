@@ -16,9 +16,8 @@ h3 {
 }
 
 .deck_container {
-    font-family: 'Uncial Antiqua', cursive;
-    color: rgb(115, 5, 179);
-    align-items: center;
+    font-family: 'Fondamento', cursive;
+    color: rgb(52, 200, 33);
     border: 3px gray solid;
     border-radius: 5px;
     background: rgba(0,0,0,.90);
@@ -31,7 +30,7 @@ h3 {
 }
 
 .deck_title {
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     text-align: center;
     font-size: 30px;
 }
@@ -44,7 +43,7 @@ h3 {
 .text_field {
     background: rgba(0,0,0,0);
     border: 2px gray solid;
-    font-family: 'Trebuchet MS';
+    font-family: 'Roboto';
     color: gray;
     font-size: 18px;
     text-align: center;
@@ -62,7 +61,7 @@ h3 {
 }
 
 .card_title {
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     justify-content: center;
     align-items: center;
     font-size: 18px;
@@ -70,9 +69,9 @@ h3 {
 
 .deck_back {
     background: rgba(0,0,0,.90);
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     font-size: 24px;
-    font-family: 'Uncial Antiqua', cursive;
+    font-family: 'Fondamento', cursive;
     width: 110px;
     text-align: center;
     text-decoration: none;

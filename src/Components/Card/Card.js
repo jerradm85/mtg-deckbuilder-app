@@ -20,7 +20,7 @@ class Card extends React.Component {
     }
 
     findCard(cards) {
-        const deck = this.findDeck(this.context)
+        // const deck = this.findDeck(this.context)
         const foundCard = cards.find(card => {
             if (this.props.match.params.cardId) {
                 return (card.id === parseInt(this.props.match.params.cardId));

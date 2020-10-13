@@ -3,7 +3,7 @@
 }
 
 .login_container {
-    font-family: 'Uncial Antiqua', cursive;
+    font-family: 'Fondamento', cursive;
     align-items: center;
     border: 1px gray solid;
     background: rgba(0,0,0,.90);
@@ -17,7 +17,7 @@
 }
 
 .login_form {
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     text-align: center;
 }
 

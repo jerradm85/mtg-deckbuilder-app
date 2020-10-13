@@ -38,7 +38,6 @@ class User extends React.Component {
                     {decks.map(deck =>
                         <div className="deckTile" key={deck.id}>
                             <Link className="deck_name glow-button" to={`/deck/${deck.id}`}>{deck.name}</Link>
-                            <Link className="edit_deck glow-button" to={`/user`}>Edit</Link>
                             <Link className="deck_delete glow-red" to="/user" onClick={() => this.deleteDeck(deck.id)}>Delete</Link>
                         </div>
                     )}

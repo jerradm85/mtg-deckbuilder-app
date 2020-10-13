@@ -37,14 +37,10 @@ class CreateDeck extends React.Component {
             return
         }
         const card = this.context.cards.find(card => parseInt(card.id) === parseInt(cardId));
-        console.log(card, cardId, this.state.cards)
         this.setState({
             cards: this.state.cards.concat(card),
             deckCards: this.state.deckCards.concat(card)
         }, () => {
-            const cardsArr = this.state.cards
-            const dCards = this.state.deckCards
-            console.log(cardsArr, dCards)
         });
     }
 
@@ -69,7 +65,7 @@ class CreateDeck extends React.Component {
         }
 
         DecksService.postDeck(deck)
-            .then(deck => {
+            .then(() => {
                 this.setState({
                     cards: []
                 })

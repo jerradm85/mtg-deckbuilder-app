@@ -3,7 +3,7 @@
 }
 
 .reg_container {
-    font-family: 'Uncial Antiqua', cursive;
+    font-family: 'Fondamento', cursive;
     background: rgba(0,0,0,.90);
     align-items: center;
     border: 1px gray solid;
@@ -19,7 +19,7 @@
 .reg_form {
     text-align: center;
     background: rgba(0,0,0,0);
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
 }
 
 .reg_field {
@@ -53,9 +53,9 @@
 }
 
 .reg_submit {
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     background: rgba(0, 0, 0, .01);
-    font-family: 'Uncial Antiqua', cursive;
+    font-family: 'Fondamento', cursive;
     text-decoration: none;
     border-radius: 5px;
     padding-top: 5px;
@@ -73,5 +73,5 @@
 
 .red {
     color: red;
-    font-family: 'Trebuchet MS'
+    font-family: 'Roboto'
 }

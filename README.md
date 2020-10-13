@@ -18,7 +18,7 @@ This is the screen a user sees after they log in. it features a navigation menu 
 ...They are taken to the "Create Deck" view, where they can name their deck, select from a list of cards and add them to their deck, then they can choose to describe the theme of the deck / why it was built or not. Finally they submit the deck, which creates it and storing it for later viewing.
 
 ![image](/images/Screen4.png)
-After the user creates a deck, the deck appears in their deck list on the left of the screen. They have the option to delete their decks currnently, with edit functionality coming soon.
+After the user creates a deck, the deck appears in their deck list on the left of the screen. They have the option to delete their decks.
 
 ![image](/images/Screen3.png)
 Finally, we have the "Deck" view. This view shows the completed deck. the user may click on any of the cards within the deck to view that card, and my back out to the user screen at any time via the back button.

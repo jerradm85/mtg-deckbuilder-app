@@ -10,8 +10,8 @@
 }
 
 .create_container {
-    font-family: 'Uncial Antiqua', cursive;
-    color: rgb(115, 5, 179);
+    font-family: 'Fondamento', cursive;
+    color: rgb(52, 200, 33);
     align-items: center;
     border: 2px gray solid;
     border-radius: 5px;
@@ -75,7 +75,7 @@
 }
 
 .create_add_card {
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     border: 1px gray solid;
     border-radius: 5px;
     margin-left: 10px;
@@ -95,9 +95,9 @@
 .create_button {
     cursor: pointer;
     background: rgba(0,0,0,0);
-    font-family: 'Uncial Antiqua', cursive;
+    font-family: 'Fondamento', cursive;
     font-size: 20px;
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     border: 2px gray solid;
     border-radius: 5px;
     padding-top: 5px;
@@ -119,7 +119,7 @@
 
 .create_back {
     width: 125px;
-    color: rgb(115, 5, 179);
+    color: rgb(52, 200, 33);
     margin: 0 auto;
     border: 2px gray solid;
     border-radius: 5px;
@@ -129,6 +129,6 @@
     padding-right: 30px;
     background: rgb(0,0,0,.95);
     font-size: 20px;
-    font-family: 'Uncial Antiqua', cursive;
+    font-family: 'Fondamento', cursive;
     text-decoration: none;
 }
